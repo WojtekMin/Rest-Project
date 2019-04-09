@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpage Information</title>
+</head>
+<body>
+    {% if is_reachable %}
+        <p>Available information about website</p>
+        <ul>
+            <li><strong>Webpage title:</strong> {{ webpage_title }}</li>
+            <li><strong>Response status code:</strong> {{ response_status_code }}</li>
+            <li><strong>Response status code description:</strong> {{ response_status_code_description }}</li>
+            <li><strong>HTML version:</strong> {{ html_version }}</li>
+            <li><strong>Webpage h1 headings number:</strong> {{ h1_headings_number }}</li>
+            <li><strong>Webpage h2 headings number:</strong> {{ h2_headings_number }}</li>
+            <li><strong>Webpage h3 headings number:</strong> {{ h3_headings_number }}</li>
+            <li><strong>Webpage h4 headings number:</strong> {{ h4_headings_number }}</li>
+            <li><strong>Webpage h5 headings number:</strong> {{ h5_headings_number }}</li>
+            <li><strong>Webpage h6 headings number:</strong> {{ h6_headings_number }}</li>
+            <li><strong>Webpage links number:</strong> {{ links_number }}</li>
+            <li><strong>Webpage internal links number:</strong> {{ internal_links_number }}</li>
+            <li><strong>Webpage external links number:</strong> {{ external_links_number }}</li>
+            <li><strong>Webpage inaccessible links number:</strong> {{ inaccessible_links_number }}</li>
+            {% if is_login_form %}
+                <p>There <strong>is</strong> a login form on the webpage</p>
+            {% else %}
+                <p>There <strong>is no</strong> login form on the webpage</p>
+            {% endif %}
+        </ul>
+    {% else %}
+        <p>Website is not reachable</p>
+        <p><strong>Response status code:</strong> {{ response_status_code }}</p>
+         <p><strong>Response status code description:</strong> {{ response_status_code_description }}</p>
+    {% endif %}
+</body>
+</html>
